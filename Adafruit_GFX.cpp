@@ -371,23 +371,23 @@ void Adafruit_GFX::fillRoundRect(int16_t x, int16_t y, int16_t w,
 }
 
 // Draw a Pentagram
-void Adafruit_GFX::drawPentagram(int16_t x0, int16_t y0,
-        int16_t r0, uint16_t color) {
+void Adafruit_GFX::drawPentagram(int16_t x, int16_t y,
+        int16_t r, uint16_t color) {
 	int xa, ya;
     int xb, yb;
     int xc, yc;
     int xd, yd;
     int xe, ye;
-    xa = x0;
-    ya = y0 - r0;
-    xb = x0 - r0 * sin(PI / 180 * 72);
-    yb = y0 + r0 * -(cos(PI / 180 * 72));
-    xc = x0 - r0 * -(sin(PI / 180 * 36));
-    yc = y0 - r0 * -(cos(PI / 180 * 36));
-    xd = x0 + r0 * -(sin(PI / 180 * 36));
-    yd = y0 - r0 * -(cos(PI / 180 * 36));
-    xe = x0 + r0 * sin(PI / 180 * 72);
-    ye = y0 + r0 * -(cos(PI / 180 * 72));
+    xa = x;
+    ya = y - r;
+    xb = x - r * sin(PI / 180 * 72);
+    yb = y + r * -(cos(PI / 180 * 72));
+    xc = x - r * -(sin(PI / 180 * 36));
+    yc = y - r * -(cos(PI / 180 * 36));
+    xd = x + r * -(sin(PI / 180 * 36));
+    yd = y - r * -(cos(PI / 180 * 36));
+    xe = x + r * sin(PI / 180 * 72);
+    ye = y + r * -(cos(PI / 180 * 72));
     drawLine(xa, ya, xc, yc, color);
     drawLine(xa, ya, xd, yd, color);
     drawLine(xb, yb, xc, yc, color);
